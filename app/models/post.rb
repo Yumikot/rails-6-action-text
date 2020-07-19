@@ -27,7 +27,7 @@ class Post < ApplicationRecord
  end
   
     def validate_content_attachment_count
-        if count.body.attachables.grep(ActiveStorage::Blob).count> MAX_CONTENT_ATTACHMENT_COUNT
+        if count.body.attachables.grep(ActiveStorage::Blob).count > MAX_CONTENT_ATTACHMENT_COUNT
         errors.add(
             :content,
             :attachments_count_is_too_big,
